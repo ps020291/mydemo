@@ -1,0 +1,48 @@
+<!--breadcrumbs area start-->
+<div class="breadcrumbs_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <ul>
+                        <li><a routerLink="">home</a></li>
+                        <li>Verify OTP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--breadcrumbs area end-->
+
+
+<!-- customer login start -->
+<div class="customer_login mt-32">
+    <div class="container">
+        <div class="row justify-content-sm-center">
+            <!--login area start-->
+            <div class="col-lg-6 col-md-6">
+                <div class="account_form">
+                    <h2>Verify OTP</h2>
+                    <form [formGroup]="verifyForm" autocomplete="off" Method = "POST" (submit)="verifyOTP()">
+                        <p>
+                            <label>OTP <span>*</span></label>
+                            <input type="text" formControlName="otp" (keyup) ="removeError()" maxlength="6" appDigits minlength="6"  [ngClass]="{ngerror: (!verifyForm.controls['otp'].valid &&
+                            !verifyForm.controls['otp'].pristine)}">
+                            <span class="text-danger" *ngIf="errorMessagebool" >{{msg}}</span>
+                        </p>
+                        <div class="text-center">
+                            <!-- <a href="#">Lost your password?</a> -->
+                            <button type="submit">Submit</button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <!--login area start-->
+             
+        </div>
+    </div>
+</div>
+<!-- customer login end -->
